@@ -650,6 +650,7 @@ body {
   }
   #home:after {
     opacity: 0.5;
+    height: 100%;
   }
   .nav-bar .logo {
     margin: 0 auto;
