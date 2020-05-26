@@ -237,13 +237,18 @@ body {
   background: url(../img/white.JPG) repeat fixed 100%;
   background-position: bottom;
   background-size: 140%;
-}
-.header-parallax-outer {
-  position: relative;
   height: 100vh;
 }
-.header-parallax-inner {
-  padding-bottom: 10%;
+#home:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  z-index: 1;
 }
 /* navbar section */
 .nav-bar {
@@ -255,7 +260,7 @@ body {
   justify-content: center;
   color: #fff;
   box-shadow: 0px 5px 100px rgb(34, 39, 53);
-  z-index: 99;
+  z-index: 2;
 }
 .logo {
   background-image: url(../img/logo-s.png);
@@ -313,13 +318,13 @@ body {
 /* Professional section */
 #professional {
   height: 100vh;
-  background: url(../img/working.jpg) repeat fixed 100%;
+  background: url(../img/working.jpg) fixed;
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 0;
   position: relative;
+  padding-top: 100px;
 }
 /* overlay */
 #professional:after {
@@ -349,13 +354,20 @@ body {
 }
 .pro-title span {
   color: #939dab;
+  font-size: 50px;
+  font-weight: bold;
   margin-right: 15px;
+  letter-spacing: 8px;
+}
+.title-num {
+  display: flex;
 }
 .pro-title h3 {
   font-size: 22px;
   letter-spacing: 5px;
   margin-left: 4px;
 }
+/* bar-chart */
 .bar-chart li {
   display: grid;
   grid-template-columns: 20% 1fr 0%;
@@ -392,10 +404,12 @@ body {
 }
 /* insta section Parallax效果 ＆ OverLay效果 */
 #instagram {
+  height: 100vh;
   background: url(../img/green.jpg) repeat fixed 100%;
   background-size: cover;
+  position: relative;
 }
-.instagram-outer:after {
+#instagram:after {
   content: "";
   display: block;
   width: 100%;
@@ -407,18 +421,13 @@ body {
   opacity: 0.5;
   z-index: 0;
 }
-.instagram-outer > * {
-  z-index: 10;
-  position: relative;
-}
-.instagram-outer {
-  position: relative;
-}
-.instagram-inner {
+.instagram-content {
   padding-top: 20%;
   padding-bottom: 20%;
+  z-index: 1;
+  position: relative;
 }
-.instagram-inner p {
+.instagram-content p {
   color: white;
   text-align: center;
   padding: 50px;
@@ -426,7 +435,7 @@ body {
   font-weight: bold;
   letter-spacing: 5px;
 }
-.instagram-inner h2 {
+.instagram-content h2 {
   color: white;
   text-align: center;
   padding: 50px;
@@ -434,7 +443,7 @@ body {
   font-weight: bold;
   letter-spacing: 5px;
 }
-.instagram-inner span {
+.instagram-content span {
   color: #00d646;
 }
 /* combin section */
@@ -468,6 +477,10 @@ body {
 }
 .folio-title span {
   color: #939dab;
+  font-size: 50px;
+  font-weight: bold;
+  margin-right: 15px;
+  letter-spacing: 8px;
 }
 .folio-title {
   margin: 0 0 50px 20%;
@@ -598,7 +611,6 @@ body {
   width: 100%;
   background: url(../img/footer-parallax.jpg) repeat fixed 100%;
   background-size: cover;
-  object-fit: cover;
   position: relative;
 }
 .footer-parallax:after {
@@ -620,8 +632,7 @@ body {
 .footer p {
   font-size: 12px;
   color: #becbdf;
-  text-align: left;
-  grid-column: 3/4;
+  margin: 0 auto;
 }
 .footer-logo {
   background-image: url(../img/logo-s.png);
@@ -632,4 +643,179 @@ body {
   overflow: hidden;
   white-space: nowrap;
   margin-right: 200px;
+}
+@media (max-width: 569px) {
+  #home {
+    background: url(../img/white-rwd.png) fixed;
+  }
+  #home:after {
+    opacity: 0.5;
+  }
+  .nav-bar .logo {
+    margin: 0 auto;
+  }
+  .nav-bar ul {
+    display: none;
+  }
+  .header-content {
+    position: relative;
+    margin: 0 auto;
+    padding: 60% 10px;
+    display: block;
+    z-index: 2;
+  }
+  .header-content h1 {
+    text-align: center;
+  }
+  .header-content p {
+    text-align: center;
+  }
+
+  /* professional */
+  .pro-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .title-num {
+    display: block;
+  }
+  .pro-title {
+    text-align: center;
+    margin: 0;
+  }
+  .pro-title span {
+    font-size: 150px;
+    margin: 0;
+  }
+  .pro-title h2 {
+    font-size: 35px;
+    border-bottom: 3px dotted #00d646;
+    margin-bottom: 15px;
+  }
+  .pro-title h3 {
+    margin: 0;
+    line-height: 1.5em;
+  }
+  /* bar-chart */
+  .bar-chart ul {
+    width: 300px;
+  }
+  .bar-chart li {
+    display: block;
+    text-align: center;
+  }
+  .bar-chart p {
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  .bar-num span {
+    display: none;
+  }
+  .bar {
+    display: block;
+    margin: 0px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  .bar1:after {
+    content: "80%";
+  }
+  .bar2:after {
+    content: "75%";
+  }
+  .bar3:after {
+    content: "80%";
+  }
+  .bar4:after {
+    content: "70%";
+  }
+  .bar5:after {
+    content: "70%";
+  }
+
+  /* insta */
+  .instagram-content {
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .instagram-content p {
+    line-height: 1.5em;
+  }
+  /* combine */
+  .conbine {
+    height: auto;
+    position: static;
+  }
+  /* portfolio */
+  #portfolio {
+    position: relative;
+    top: 250px;
+  }
+  .folio-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .folio-title {
+    text-align: center;
+    margin: 0 0 30px 0;
+  }
+  .folio-title span {
+    font-size: 150px;
+    margin: 0;
+  }
+  .folio-title h2 {
+    border-bottom: 3px dotted #00d646;
+    margin-bottom: 15px;
+  }
+  .folio-title h3 {
+    margin: 0;
+    line-height: 1.5em;
+  }
+  .work {
+    display: block;
+  }
+  /* contact */
+  .contact-box {
+    position: relative;
+    top: 500px;
+    left: 0px;
+    box-shadow: none;
+    width: 90%;
+    background-color: rgba(51, 59, 80, 1);
+  }
+  .contact-info {
+    display: block;
+    padding: 0;
+  }
+  .contact-title {
+    text-align: center;
+    width: auto;
+    margin: 0px;
+    padding: 30px 20px;
+  }
+  .mail-area {
+    width: auto;
+    margin: 0;
+    padding: 30px 20px;
+  }
+  /* footer */
+  .footer-parallax {
+    height: 30vh;
+    top: 900px;
+  }
+  .footer {
+    position: relative;
+    flex-direction: column;
+    top: 900px;
+  }
 }
